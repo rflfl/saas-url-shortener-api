@@ -10,5 +10,5 @@ export default async function shortenedLinkRoutes(fastify: FastifyInstance): Pro
 
     fastify.get('/', shortenedLinkController.getAllLinks)
     fastify.post('/shorten', shortenedLinkController.createShortenedLink)
-    fastify.get('/:code', shortenedLinkController.getOriginalUrl)
+    fastify.get('/:shortenedCode', shortenedLinkController.getOriginalUrl)
 }
