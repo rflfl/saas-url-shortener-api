@@ -6,6 +6,7 @@ const shortenedLinkRepository = new ShortenedLinkRepository()
 export class ShortenedLinkService {
   async create(originalUrl: string, userId: string): Promise<string> {
     const shortenedCode = nanoid(6)
+   if(!originalUrl) { throw new Error("Original URL is required") }
     const shortenedLink = await shortenedLinkRepository.create({
         original_url: originalUrl,
         shortened_code: shortenedCode,
