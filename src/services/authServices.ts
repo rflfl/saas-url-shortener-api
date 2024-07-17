@@ -16,8 +16,8 @@ export class AuthService {
       email,
       password: hashedPassword,
       role: "USER",
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      created_at: new Date(),
+      updated_at: new Date(),
     })
     return generateToken(user.id)
   }

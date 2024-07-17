@@ -1,10 +1,12 @@
 import fastify from "fastify"
-import authRoutes from "../routes/authRoutes.ts"
+import apiRoutes from "../routes/apiRoutes.ts"
+
 const server = fastify()
 
 const PORT = 3333
 
-server.register(authRoutes, { prefix: "/auth" })
+server.register(apiRoutes, { prefix: "/api" })
+
 
 server.get("/", (require, reply) => {
   reply.send("Bem vindo")
